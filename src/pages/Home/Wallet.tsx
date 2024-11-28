@@ -5,19 +5,19 @@ export const WalletComponent = () => {
   const wallet: any = useTonWallet();
   return (
     wallet && (
-      <div>
-        <span>Connected wallet address: {wallet.account.address}</span>
-        <span>Device: {wallet.device.appName}</span>
-        <span>Connected via: {wallet.provider}</span>
+      <ul>
+        <li>Connected wallet address: {wallet.account.address}</li>
+        <li>Device: {wallet.device.appName}</li>
+        <li>Connected via: {wallet.provider}</li>
         {wallet.connectItems?.tonProof?.proof && (
-          <span>Ton proof: {wallet.connectItems.tonProof.proof}</span>
+          <li>Ton proof: {wallet.connectItems.tonProof.proof}</li>
         )}
 
-        <div>Connected wallet info:</div>
-        <div>
+        <li>Connected wallet info:</li>
+        <li>
           {wallet.name} <img src={wallet.imageUrl} />
-        </div>
-      </div>
+        </li>
+      </ul>
     )
   );
 };
