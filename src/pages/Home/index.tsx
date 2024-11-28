@@ -1,6 +1,7 @@
 import { Address } from '@ton/core';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 import { useCallback, useEffect, useState } from 'react';
+import { WalletComponent } from './Wallet';
 
 export default function Home() {
   const [tonConnectUI] = useTonConnectUI();
@@ -74,6 +75,7 @@ export default function Home() {
           <button onClick={handleWalletAction}>Connect TON Wallet</button>
         </>
       )}
+      <WalletComponent />
     </>
   );
 }
