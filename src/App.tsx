@@ -1,30 +1,30 @@
-//import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 //import { TonConnectButton } from '@tonconnect/ui-react';
-//import WebApp from '@twa-dev/sdk';
+import WebApp from '@twa-dev/sdk';
 import './App.css';
-import Home from './pages/Home';
+// import Home from './pages/Home';
 
-// interface UserData {
-//   id: number;
-//   first_name: string;
-//   last_name?: string;
-//   username?: string;
-//   language_code: string;
-//   is_premium?: boolean;
-// }
+interface UserData {
+  id: number;
+  first_name: string;
+  last_name?: string;
+  username?: string;
+  language_code: string;
+  is_premium?: boolean;
+}
 
 function App() {
-  // const [userData, setUserData] = useState<UserData | null>(null);
-  // useEffect(() => {
-  //   if (WebApp.initDataUnsafe.user) {
-  //     // console.log(WebApp.initDataUnsafe.user);
-  //     setUserData(WebApp.initDataUnsafe.user as UserData);
-  //   }
-  // }, []);
+  const [userData, setUserData] = useState<UserData | null>(null);
+  useEffect(() => {
+    if (WebApp.initDataUnsafe.user) {
+      // console.log(WebApp.initDataUnsafe.user);
+      setUserData(WebApp.initDataUnsafe.user as UserData);
+    }
+  }, []);
 
   return (
     <div>
-      {/* {userData ? (
+      {userData ? (
         <ul>
           <li>ID: {userData.id}</li>
           <li>First Name: {userData.first_name}</li>
@@ -33,8 +33,9 @@ function App() {
           <li>Language Code: {userData.language_code}</li>
           <li>Is Premium: {userData.is_premium ? 'Yes' : 'No'}</li>
         </ul>
-      ) : null} */}
-      <Home />
+      ) : null}
+      {/* <Home /> */}
+
       {/* 
       <h1>Hello World</h1>
       <TonConnectButton /> */}
